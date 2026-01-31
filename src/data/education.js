@@ -29,8 +29,8 @@ export const education = [
   },
   {
     id: 'associate',
-    degree: 'IT Specialist',
-    field: 'Information Technology',
+    degree: 'Associate',
+    field: 'Information Technology Specialist',
     institution: 'Milwaukee Area Technical College (MATC)', 
     status: 'Completed',
     startDate: 'January 2021', 

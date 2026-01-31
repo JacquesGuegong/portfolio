@@ -1,0 +1,40 @@
+.footer {
+  background-color: #020617;
+  color: var(--color-text);
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer__content {
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+.footer__tagline {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0;
+  }
+
+  .footer__copyright,
+  .footer__tagline {
+    font-size: 0.875rem;
+  }
+}

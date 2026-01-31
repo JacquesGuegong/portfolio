@@ -1,0 +1,12 @@
+.section {
+  padding: 4rem 0;
+}
+
+.section__title {
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.section__content {
+  width: 100%;
+}

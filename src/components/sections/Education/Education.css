@@ -1,0 +1,133 @@
+/* Education Section */
+.education {
+  background-color: var(--color-surface-alt);
+}
+
+.education__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.education__item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.education__item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.education__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.education__degree {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+  flex: 1;
+  min-width: 200px;
+}
+
+.education__status {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.education__status--completed {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.education__status--starting-soon {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: var(--color-warning);
+  border: 1px solid var(--color-warning);
+}
+
+.education__field {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.education__institution {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+.education__location {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
+.education__dates {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.education__description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 1rem 0 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education__list {
+    gap: 1.5rem;
+  }
+
+  .education__item {
+    padding: 1.5rem;
+  }
+
+  .education__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education__degree {
+    font-size: 1.25rem;
+    min-width: auto;
+  }
+
+  .education__field {
+    font-size: 1rem;
+  }
+
+  .education__description {
+    font-size: 0.9375rem;
+  }
+}

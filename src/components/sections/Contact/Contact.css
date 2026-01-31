@@ -1,0 +1,64 @@
+/* Contact Section */
+.contact {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.contact__content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__intro {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0 0 3rem 0;
+}
+
+.contact__methods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact__label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.contact__button {
+  min-width: 250px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact__intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact__methods {
+    gap: 1.5rem;
+  }
+
+  .contact__label {
+    font-size: 1rem;
+  }
+
+  .contact__button {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}

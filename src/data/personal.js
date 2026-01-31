@@ -19,7 +19,7 @@ export const personalInfo = {
   
   // Social Links
   linkedin: 'https://linkedin.com/in/yourprofile',
-  github: 'https://github.com/yourusername',
+  github: 'https://github.com/JacquesGuegong',
   
   // Photo
   photo: '/assets/images/1.png', 

@@ -5,7 +5,7 @@
  */
 
 export const skills = {
-  Frontend: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'React Native'],
+  Frontend: ['React', 'JavaScript (ES6+)', 'HTML5', 'JQuery','CSS3', 'React Native'],
   Backend: ['Django', 'REST APIs', 'Python', 'Java', 'C++', 'C#'],
   Database: ['MySQL', 'Database Design'],
   Tools: ['Git', 'Axios', 'RESTful Services', 'Version Control'],

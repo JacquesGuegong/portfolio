@@ -26,7 +26,7 @@ export const personalInfo = {
   
   // Resume/CV
   resume: {
-    url: '/assets/documents/Jacques_Duval_Guegong_Resume_(1).pdf',
+    url: '/assets/documents/Jacques_Duval_Guegong_Resume.pdf',
     downloadText: 'Download Resume',
   },
   

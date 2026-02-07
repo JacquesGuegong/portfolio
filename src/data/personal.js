@@ -18,7 +18,7 @@ export const personalInfo = {
   email: 'Jamesduval1991@gmail.com',
   
   // Social Links
-  linkedin: 'www.linkedin.com/in/jacques-duval-bb7945206',
+  linkedin: 'https://www.linkedin.com/in/jacques-duval-bb7945206',
   github: 'https://github.com/JacquesGuegong',
   
   // Photo

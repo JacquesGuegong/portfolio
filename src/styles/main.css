@@ -9,6 +9,7 @@
 @import './reset.css';
 @import './variables.css';
 @import './typography.css';
+@import './animations.css';
 
 /* Global Layout Defaults */
 html {

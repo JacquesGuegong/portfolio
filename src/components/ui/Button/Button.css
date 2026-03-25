@@ -9,7 +9,11 @@
   border: 2px solid transparent;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s ease;
   min-width: 44px;
   min-height: 44px;
   line-height: 1.5;
@@ -41,11 +45,15 @@
 .btn--primary:hover:not(.btn--disabled) {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
 }
 
 .btn--primary:active:not(.btn--disabled) {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* Secondary variant */
@@ -75,12 +83,16 @@
 .btn--outline:hover:not(.btn--disabled) {
   background-color: var(--color-accent);
   color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
 
 .btn--outline:active:not(.btn--disabled) {
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
   color: var(--color-text);
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* Size variants */

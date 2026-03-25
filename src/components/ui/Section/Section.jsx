@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
+import useScrollReveal from '../../../hooks/useScrollReveal';
 import './Section.css';
 
 /**
@@ -18,14 +19,16 @@ import './Section.css';
  */
 function Section({ children, id, className = '', title }) {
   const sectionClasses = `section ${className}`.trim();
+  const titleRef = useScrollReveal();
+  const contentRef = useScrollReveal({ rootMargin: '0px 0px -20px 0px' });
 
   return (
     <section id={id} className={sectionClasses}>
       <Container>
         {title && (
-          <h2 className="section__title">{title}</h2>
+          <h2 ref={titleRef} className="section__title reveal">{title}</h2>
         )}
-        <div className="section__content">
+        <div ref={contentRef} className="section__content reveal reveal--delay-1">
           {children}
         </div>
       </Container>

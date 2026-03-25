@@ -40,10 +40,28 @@
   transition: color 0.2s ease-in-out;
   padding: 0.5rem 0;
   display: block;
+  position: relative;
+}
+
+/* Animated underline */
+.navigation__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: 1px;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navigation__link:hover {
   color: var(--color-accent);
+}
+
+.navigation__link:hover::after {
+  width: 100%;
 }
 
 .navigation__link:focus {

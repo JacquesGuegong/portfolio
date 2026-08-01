@@ -1,3 +1,9 @@
+.about__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
 .about__content {
   max-width: var(--measure);
 }
@@ -16,7 +22,15 @@
   text-align: left;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .about__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 767px) {
   .about__paragraph {
     font-size: var(--text-base);
   }

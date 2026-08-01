@@ -10,6 +10,7 @@ export const personalInfo = {
   lastName: 'Duval Guegong',
   role: 'Software Engineer',
   location: 'Milwaukee, WI',
+  photo: '/assets/images/1.png',
 
   email: 'jamesduval1991@gmail.com',
   linkedin: 'https://linkedin.com/in/jacquesduvalguegong',

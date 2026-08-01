@@ -1,6 +1,69 @@
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+}
+
 .hero__content {
   width: 100%;
   max-width: 46rem;
+}
+
+/* ─── Portrait — hard-edged frame, duotone treatment (Ink → Brass) ───────
+   Not a circular avatar: a fixed square panel, bordered like the rest
+   of the system's cards, with a document-style caption underneath. */
+.hero__photo {
+  width: 100%;
+  max-width: 15rem;
+  margin: 0;
+}
+
+.hero__photo-frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-ink);
+}
+
+.hero__photo-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.22);
+  transform-origin: 50% 28%;
+  filter: grayscale(1) contrast(1.15) brightness(0.92);
+}
+
+.hero__photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(155deg, var(--color-ink) 10%, var(--color-brass) 135%);
+  mix-blend-mode: color;
+  opacity: 0.92;
+}
+
+.hero__photo-caption {
+  margin: var(--spacing-sm) 0 0 0;
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+}
+
+@media (min-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: 1fr 15rem;
+    align-items: start;
+    gap: var(--spacing-3xl);
+  }
+
+  .hero__photo {
+    max-width: none;
+  }
 }
 
 .hero__eyebrow {

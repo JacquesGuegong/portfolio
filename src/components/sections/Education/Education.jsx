@@ -11,7 +11,7 @@ import './Education.css';
  */
 function Education() {
   return (
-    <Section id="education" className="education" title="Education" index="05">
+    <Section id="education" className="education" title="Education" index="06">
       <ol className="education__log">
         {education.map((entry) => (
           <li key={entry.id} className="education__entry">

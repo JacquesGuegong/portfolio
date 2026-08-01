@@ -19,7 +19,7 @@ function Contact() {
   ];
 
   return (
-    <Section id="contact" className="contact" title="Contact" index="06">
+    <Section id="contact" className="contact" title="Contact" index="07">
       <p className="contact__intro">
         Open to backend and AI-integration roles. Based in {location} — email is the fastest way to reach me.
       </p>

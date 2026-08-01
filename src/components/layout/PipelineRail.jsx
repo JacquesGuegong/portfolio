@@ -15,8 +15,9 @@ const NODES = [
   { id: 'projects', index: '02', label: 'Projects' },
   { id: 'skills', index: '03', label: 'Skills' },
   { id: 'about', index: '04', label: 'About' },
-  { id: 'education', index: '05', label: 'Education' },
-  { id: 'contact', index: '06', label: 'Contact' },
+  { id: 'experience', index: '05', label: 'Experience' },
+  { id: 'education', index: '06', label: 'Education' },
+  { id: 'contact', index: '07', label: 'Contact' },
 ];
 
 function PipelineRail() {

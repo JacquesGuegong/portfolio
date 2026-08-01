@@ -6,6 +6,7 @@ import Hero from '../components/sections/Hero/Hero';
 import Projects from '../components/sections/Projects/Projects';
 import Skills from '../components/sections/Skills/Skills';
 import About from '../components/sections/About/About';
+import Experience from '../components/sections/Experience/Experience';
 import Education from '../components/sections/Education/Education';
 import Contact from '../components/sections/Contact/Contact';
 
@@ -13,7 +14,7 @@ import Contact from '../components/sections/Contact/Contact';
  * Home Component
  *
  * Composes all portfolio sections in pipeline order: Hero → Projects →
- * Skills → About → Education → Contact.
+ * Skills → About → Experience → Education → Contact.
  */
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
         <Projects />
         <Skills />
         <About />
+        <Experience />
         <Education />
         <Contact />
       </main>

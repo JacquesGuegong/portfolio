@@ -18,7 +18,7 @@ export const personalInfo = {
   github: 'https://github.com/JacquesGuegong',
 
   resume: {
-    url: '/assets/documents/Jacques_Duval_Guegong_Resume.pdf',
+    url: '/assets/documents/Jacques_Guegong_Resume.pdf',
     downloadText: 'Download Resume',
   },
 

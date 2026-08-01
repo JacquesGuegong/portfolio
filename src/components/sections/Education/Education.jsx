@@ -5,39 +5,32 @@ import './Education.css';
 
 /**
  * Education Component
- * 
- * Education section displaying academic qualifications and background.
- * Maps over education data and renders each entry with degree, field, status, and description.
- * 
- * @returns {JSX.Element} Education section with education entries
+ *
+ * Framed as a version history — each degree is a release, tagged
+ * v1 through v3, shipped or in progress.
  */
 function Education() {
   return (
-    <Section id="education" className="education" title="Education">
-      <div className="education__list">
-        {education.map((edu) => (
-          <article key={edu.id} className="education__item">
-            <div className="education__header">
-              <h3 className="education__degree">{edu.degree}</h3>
-              <span className={`education__status education__status--${edu.status.toLowerCase().replace(/\s+/g, '-')}`}>
-                {edu.status}
-              </span>
-            </div>
-            <p className="education__field">{edu.field}</p>
-            <p className="education__institution">{edu.institution}</p>
-            {edu.location && (
-              <p className="education__location">{edu.location}</p>
-            )}
-            {(edu.startDate || edu.endDate) && (
-              <p className="education__dates">
-                {edu.startDate && `${edu.startDate} - `}
-                {edu.endDate}
+    <Section id="education" className="education" title="Education" index="05">
+      <ol className="education__log">
+        {education.map((entry) => (
+          <li key={entry.id} className="education__entry">
+            <span className="education__version mono">{entry.version}</span>
+            <div className="education__body">
+              <div className="education__row">
+                <h3 className="education__degree">{entry.degree}</h3>
+                <span className={`education__status education__status--${entry.status}`}>
+                  <span className="education__status-dot" aria-hidden="true" />
+                  {entry.status === 'in-progress' ? 'In progress' : 'Shipped'}
+                </span>
+              </div>
+              <p className="education__meta">
+                {entry.institution} <span aria-hidden="true">·</span> {entry.date}
               </p>
-            )}
-            <p className="education__description">{edu.description}</p>
-          </article>
+            </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </Section>
   );
 }

@@ -13,11 +13,11 @@ import './Navigation.css';
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Navigation items mapping to section IDs
+  // Navigation items mapping to section IDs, matching page order
   const navItems = [
-    { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
+    { id: 'about', label: 'About' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' },
   ];

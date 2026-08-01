@@ -1,99 +1,89 @@
 /**
- * CSS Custom Properties (Design Tokens)
- * 
- * Centralized design system variables for consistent styling
- * across the entire application. Enables easy theming and maintenance.
+ * Design Tokens — "Runtime"
+ *
+ * A palette and type system built for a backend/systems engineer:
+ * deep instrument-panel darks, two semantically-tied accents
+ * (brass = in-progress, signal = live), and a display/body/mono
+ * type trio that pairs enterprise-systems heritage (IBM Plex) with
+ * one characterful display face (Bricolage Grotesque).
  */
 
 :root {
-  /* Colors - Dark AI/ML Theme */
-  --color-bg: #0F172A;
-  --color-surface: #111827;
-  --color-surface-alt: #1E293B;
+  /* ─── Color — 5 core hex values ─────────────────────────────────────── */
+  --color-ink: #0B1614;        /* background base */
+  --color-slate: #12211F;      /* surface / card layer */
+  --color-paper: #E9EFEA;      /* primary text */
+  --color-brass: #D6A34A;      /* primary accent — restraint, in-progress */
+  --color-signal: #3F9FA8;     /* secondary accent — live, links */
 
-  --color-accent: #3B82F6;
-  --color-accent-hover: #2563EB;
+  /* Derived tones (computed from the 5 core values, not new hex) */
+  --color-slate-raised: color-mix(in srgb, var(--color-slate) 100%, var(--color-paper) 6%);
+  --color-text-muted: color-mix(in srgb, var(--color-paper) 58%, var(--color-ink) 42%);
+  --color-text-faint: color-mix(in srgb, var(--color-paper) 38%, var(--color-ink) 62%);
+  --color-border: color-mix(in srgb, var(--color-paper) 14%, var(--color-ink) 86%);
+  --color-border-strong: color-mix(in srgb, var(--color-paper) 26%, var(--color-ink) 74%);
+  --color-brass-dim: color-mix(in srgb, var(--color-brass) 16%, transparent);
 
-  --color-text: #F9FAFB;
-  --color-text-muted: #94A3B8;
+  /* Legacy aliases kept for any un-migrated component references */
+  --color-bg: var(--color-ink);
+  --color-surface: var(--color-slate);
+  --color-surface-alt: var(--color-slate-raised);
+  --color-accent: var(--color-signal);
+  --color-accent-hover: var(--color-brass);
+  --color-text: var(--color-paper);
 
-  --color-border: #1F2933;
+  /* ─── Typography ─────────────────────────────────────────────────────── */
+  --font-display: 'Bricolage Grotesque', 'Arial Black', sans-serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
 
-  --color-success: #10B981;
-  --color-warning: #F59E0B;
-  
-  /* Legacy color mappings for compatibility */
-  --color-primary: var(--color-accent);
-  --color-primary-dark: var(--color-accent-hover);
-  --color-text-primary: var(--color-text);
-  --color-text-secondary: var(--color-text-muted);
-  --color-bg-primary: var(--color-bg);
-  --color-bg-secondary: var(--color-surface);
-  --color-bg-tertiary: var(--color-surface-alt);
-  
-  /* Spacing Scale (8px base unit) */
-  --spacing-xs: 0.25rem;   /* 4px */
-  --spacing-sm: 0.5rem;     /* 8px */
-  --spacing-md: 1rem;       /* 16px */
-  --spacing-lg: 1.5rem;     /* 24px */
-  --spacing-xl: 2rem;       /* 32px */
-  --spacing-2xl: 3rem;      /* 48px */
-  --spacing-3xl: 4rem;      /* 64px */
-  --spacing-4xl: 6rem;      /* 96px */
-  
-  /* Typography Scale */
-  --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.875rem;     /* 14px */
-  --font-size-base: 1rem;       /* 16px */
-  --font-size-lg: 1.125rem;     /* 18px */
-  --font-size-xl: 1.25rem;      /* 20px */
-  --font-size-2xl: 1.5rem;      /* 24px */
-  --font-size-3xl: 2rem;        /* 32px */
-  --font-size-4xl: 2.5rem;      /* 40px */
-  --font-size-5xl: 3rem;        /* 48px */
-  
-  /* Font Weights */
+  /* Type scale — deliberate steps, no ad-hoc sizes */
+  --text-2xs: 0.6875rem;    /* 11px — micro labels */
+  --text-xs: 0.75rem;       /* 12px — mono labels, eyebrows */
+  --text-sm: 0.875rem;      /* 14px — nav, small UI */
+  --text-base: 1rem;        /* 16px — body */
+  --text-md: 1.125rem;      /* 18px — lead paragraphs */
+  --text-lg: 1.375rem;      /* 22px — project titles */
+  --text-xl: 1.75rem;       /* 28px — sub headers */
+  --text-2xl: 2.25rem;      /* 36px — section headers */
+  --text-3xl: clamp(2.5rem, 4.5vw + 1rem, 4rem);   /* hero headline */
+  --text-metric: 2.25rem;   /* stat numbers */
+
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
-  /* Line Heights */
-  --line-height-tight: 1.2;
+
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.35;
   --line-height-normal: 1.5;
-  --line-height-relaxed: 1.7;
-  --line-height-loose: 1.8;
-  
-  /* Border Radius */
-  --radius-sm: 4px;
+  --line-height-relaxed: 1.6;
+
+  --measure: 62ch; /* comfortable reading width */
+
+  /* ─── Spacing (8px base unit) ────────────────────────────────────────── */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+  --spacing-5xl: 8rem;
+
+  /* ─── Radius ──────────────────────────────────────────────────────────── */
+  --radius-sm: 3px;
   --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-lg: 10px;
   --radius-full: 9999px;
-  
-  /* Transitions */
-  --transition-fast: 0.15s ease-in-out;
-  --transition-base: 0.2s ease-in-out;
-  --transition-slow: 0.3s ease-in-out;
-  --transition-spring: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.12);
-  
-  /* Container Max Widths */
-  --container-sm: 640px;
-  --container-md: 768px;
-  --container-lg: 1024px;
-  --container-xl: 1280px;
-  --container-2xl: 1400px;
-  
-  /* Breakpoints (for reference, use in media queries) */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
+
+  /* ─── Motion ──────────────────────────────────────────────────────────── */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-reveal: 0.3s cubic-bezier(0.2, 0.65, 0.3, 0.9);
+
+  /* ─── Containers ──────────────────────────────────────────────────────── */
+  --container-content: 1200px;
+  --rail-width: 4.5rem;
 }

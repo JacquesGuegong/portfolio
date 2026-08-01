@@ -13,7 +13,7 @@ import './About.css';
  */
 function About() {
   return (
-    <Section id="about" className="about" title="About Me">
+    <Section id="about" className="about" title="About" index="04">
       <div className="about__content">
         <div className="about__text">
           {about.paragraphs.map((paragraph, index) => (

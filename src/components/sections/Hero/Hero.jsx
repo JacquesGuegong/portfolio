@@ -6,73 +6,51 @@ import './Hero.css';
 
 /**
  * Hero Component
- * 
- * Main hero section displaying name, title, description, and call-to-action buttons.
- * Uses data from personal.js to maintain consistency across the portfolio.
- * 
- * @returns {JSX.Element} Hero section with introduction and CTAs
+ *
+ * The thesis of the page: a specific, engineering-flavored claim
+ * backed immediately by real numbers. No photo, no greeting.
  */
 function Hero() {
-  const { hero, email, photo, resume } = personalInfo;
+  const { hero } = personalInfo;
 
-  /**
-   * Handles smooth scroll to projects section
-   */
   const handleScrollToProjects = (e) => {
     e.preventDefault();
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
     <Section id="hero" className="hero" title={null}>
       <div className="hero__content">
-        {photo && (
-          <div className="hero__image-wrapper">
-            <img 
-              src={photo} 
-              alt={`${hero.name} - ${hero.subtitle}`}
-              className="hero__image"
-            />
-          </div>
-        )}
-        <p className="hero__greeting">{hero.greeting}</p>
-        <h1 className="hero__name">{hero.name}</h1>
-        <p className="hero__subtitle">{hero.subtitle}</p>
+        <p className="hero__eyebrow mono">
+          <span className="hero__eyebrow-dot" aria-hidden="true" />
+          {hero.eyebrow}
+        </p>
+        <h1 className="hero__headline font-display">{hero.headline}</h1>
         <p className="hero__description">{hero.description}</p>
+
         <div className="hero__cta">
           <Button
             variant="primary"
             size="large"
-            href={hero.ctaLink}
+            href={hero.ctaPrimary.href}
             onClick={handleScrollToProjects}
             className="hero__cta-primary"
           >
-            {hero.ctaText}
+            {hero.ctaPrimary.text}
           </Button>
-          <Button
-            variant="outline"
-            size="large"
-            href={`mailto:${email}`}
-            className="hero__cta-secondary"
-          >
-            Get In Touch
+          <Button variant="outline" size="large" href={hero.ctaSecondary.href} className="hero__cta-secondary">
+            {hero.ctaSecondary.text}
           </Button>
-          {resume && resume.url && (
-            <Button
-              variant="outline"
-              size="large"
-              href={resume.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero__cta-resume"
-            >
-              {resume.downloadText || 'Download Resume'}
-            </Button>
-          )}
         </div>
+
+        <dl className="hero__metrics">
+          {hero.metrics.map((metric) => (
+            <div className="hero__metric" key={metric.label}>
+              <dt className="hero__metric-value mono tabular-nums">{metric.value}</dt>
+              <dd className="hero__metric-label">{metric.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </Section>
   );

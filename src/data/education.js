@@ -1,42 +1,33 @@
 /**
  * Education Data
- * 
- * Academic qualifications and educational background.
+ *
+ * Framed as a version history — each degree is a release.
  */
 
 export const education = [
   {
     id: 'masters',
-    degree: 'Master of Science',
-    field: 'Artificial Intelligence / Machine Learning',
-    institution: 'University of Wisconsin-Milwaukee', 
-    status: 'Current',
-    startDate: 'January 2026',
-    endDate: 'May 2027',
-    description: 'Focusing on advanced machine learning algorithms, deep learning, neural networks, and AI-driven application development.',
-    location: 'Milwaukee, USA', 
+    version: 'v3',
+    status: 'in-progress',
+    degree: 'M.S. Artificial Intelligence / Machine Learning',
+    institution: 'University of Wisconsin-Milwaukee',
+    date: 'Expected 2027',
   },
   {
     id: 'bachelors',
-    degree: 'Bachelor of Science',
-    field: 'Computer Science',
-    institution: 'University of Wisconsin-Milwaukee', 
-    status: 'Completed',
-    startDate: 'December 2023', 
-    endDate: 'December 2025',
-    description: 'Comprehensive foundation in software engineering, data structures, algorithms, database systems, and full-stack web development.',
-    location: 'Milwaukee, USA', 
+    version: 'v2',
+    status: 'shipped',
+    degree: 'B.S. Computer Science',
+    institution: 'University of Wisconsin',
+    date: 'December 2025',
   },
   {
     id: 'associate',
-    degree: 'Associate',
-    field: 'Information Technology Specialist',
-    institution: 'Milwaukee Area Technical College (MATC)', 
-    status: 'Completed',
-    startDate: 'January 2021', 
-    endDate: 'December 2023',
-    description: 'General studies in information technology, networking, and security.',
-    location: 'Milwaukee, USA', 
+    version: 'v1',
+    status: 'shipped',
+    degree: 'A.A.S. IT Computer Support',
+    institution: 'Milwaukee Area Technical College',
+    date: 'May 2023',
   },
 ];
 

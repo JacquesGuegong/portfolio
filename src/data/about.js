@@ -1,15 +1,12 @@
 /**
  * About Section Data
- * 
- * Content for the About section of the portfolio.
  */
 
 export const about = {
   paragraphs: [
-    "I recently completed my Bachelor's degree in Computer Science and am excited to begin my Master's in Artificial Intelligence and Machine Learning. Throughout my undergraduate studies, I developed a strong foundation in software development, database management, and full-stack application architecture.",
-    "My experience spans both web and mobile development, with hands-on projects involving React, Django, and MySQL. I'm particularly interested in building AI-driven systems that solve real-world problems and creating scalable applications that make a meaningful impact.",
-    "As I transition into graduate studies, I'm eager to deepen my expertise in machine learning algorithms, neural networks, and data-driven decision making. I'm looking for opportunities to contribute to innovative projects and collaborate with teams that push the boundaries of technology."
-  ]
+    "Jacques spends most of his time in Java and Spring Boot — writing REST APIs, securing them with JWT and Spring Security, and testing them until they're boring. He integrates Claude AI into the mobile products he builds, not as a chatbot bolted on the side, but as a feature that reads transaction data and produces summaries, categorization, and anomaly alerts.",
+    "He ships what he builds. Every production project runs behind a GitHub Actions pipeline and a multi-stage Docker build, tested before it merges. He's currently pursuing an M.S. in Artificial Intelligence / Machine Learning at the University of Wisconsin-Milwaukee, expected 2027, and applying it directly to the RAG and LLM-integration work in his projects.",
+  ],
 };
 
 export default about;

@@ -1,64 +1,62 @@
-/* Contact Section */
-.contact {
-  background-color: rgba(59, 130, 246, 0.05);
-}
-
-.contact__content {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .contact__intro {
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: var(--text-md);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-muted);
-  margin: 0 0 3rem 0;
+  margin: 0 0 var(--spacing-2xl) 0;
+  max-width: var(--measure);
 }
 
-.contact__methods {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.contact__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.contact__label {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-text);
+.contact__endpoints {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+  max-width: 32rem;
 }
 
-.contact__button {
-  min-width: 250px;
-  width: 100%;
-  max-width: 400px;
+.contact__endpoint {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* Responsive Design */
+.contact__endpoint-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+}
+
+.contact__endpoint-value {
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-paper);
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .contact__endpoint-value {
+    transition: color var(--transition-fast);
+  }
+}
+
+.contact__endpoint-value:hover,
+.contact__endpoint-value:focus-visible {
+  color: var(--color-brass);
+}
+
 @media (max-width: 768px) {
-  .contact__intro {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .contact__endpoint {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
   }
 
-  .contact__methods {
-    gap: 1.5rem;
-  }
-
-  .contact__label {
-    font-size: 1rem;
-  }
-
-  .contact__button {
-    min-width: 100%;
-    max-width: 100%;
+  .contact__endpoint-value {
+    text-align: left;
+    font-size: var(--text-base);
   }
 }

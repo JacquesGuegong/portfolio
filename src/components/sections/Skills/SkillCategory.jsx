@@ -3,23 +3,21 @@ import './SkillCategory.css';
 
 /**
  * SkillCategory Component
- * 
- * Reusable component for displaying a category of skills.
- * Shows category title and renders skills as badge/tag list.
- * 
- * @param {Object} props - Component props
- * @param {string} props.category - Category name (e.g., "Frontend", "Backend")
- * @param {string[]} props.skills - Array of skills in this category
- * @returns {JSX.Element} Skill category section with title and skill badges
+ *
+ * One row of the skills spec sheet: a domain label beside its items.
+ *
+ * @param {Object} props
+ * @param {string} props.domain
+ * @param {string[]} props.items
  */
-function SkillCategory({ category, skills }) {
+function SkillCategory({ domain, items }) {
   return (
-    <div className="skill-category">
-      <h3 className="skill-category__title">{category}</h3>
-      <ul className="skill-category__list">
-        {skills.map((skill, index) => (
-          <li key={index} className="skill-category__item">
-            {skill}
+    <div className="skill-row">
+      <h3 className="skill-row__domain mono">{domain}</h3>
+      <ul className="skill-row__items">
+        {items.map((item) => (
+          <li key={item} className="skill-row__item">
+            {item}
           </li>
         ))}
       </ul>

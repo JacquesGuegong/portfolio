@@ -1,43 +1,37 @@
 /**
  * Personal Information Data
- * 
+ *
  * Centralized source of truth for personal profile information.
- * Used across multiple components to maintain consistency.
  */
 
 export const personalInfo = {
-  // Basic Information
   name: 'Jacques Duval Guegong',
   firstName: 'Jacques',
   lastName: 'Duval Guegong',
-  title: 'Computer Science Graduate | Incoming AI/ML Master\'s Student',
-  role: 'AI/ML Master\'s Student & Software Engineer',
-  description: 'Passionate software engineer with a strong foundation in full-stack development and a drive to build innovative AI-driven applications. I combine technical expertise with creative problem-solving to deliver scalable, real-world solutions.',
-  
-  // Contact Information
-  email: 'Jamesduval1991@gmail.com',
-  
-  // Social Links
-  linkedin: 'https://www.linkedin.com/in/jacques-duval-bb7945206',
+  role: 'Software Engineer',
+  location: 'Milwaukee, WI',
+
+  email: 'jamesduval1991@gmail.com',
+  linkedin: 'https://linkedin.com/in/jacquesduvalguegong',
   github: 'https://github.com/JacquesGuegong',
-  
-  // Photo
-  photo: '/assets/images/1.png', 
-  
-  // Resume/CV
+
   resume: {
     url: '/assets/documents/Jacques_Duval_Guegong_Resume.pdf',
     downloadText: 'Download Resume',
   },
-  
-  // Hero Section Content
+
   hero: {
-    greeting: 'Hello, I\'m',
-    name: 'Jacques Duval Guegong',
-    subtitle: 'AI/ML Master\'s Student & Software Engineer',
-    description: 'Passionate software engineer with a strong foundation in full-stack development and a drive to build innovative AI-driven applications.',
-    ctaText: 'View My Work',
-    ctaLink: '#projects',
+    eyebrow: 'Software Engineer — Milwaukee, WI',
+    headline: 'I build backend systems that survive contact with production.',
+    description:
+      'Java and Spring Boot APIs, Claude AI integrated into mobile products, shipped through Docker and GitHub Actions CI/CD.',
+    ctaPrimary: { text: 'View the work', href: '#projects' },
+    ctaSecondary: { text: 'Email', href: 'mailto:jamesduval1991@gmail.com' },
+    metrics: [
+      { value: '04', label: 'Projects shipped' },
+      { value: '06', label: 'Technical domains' },
+      { value: '100%', label: 'CI/CD pipelines green' },
+    ],
   },
 };
 

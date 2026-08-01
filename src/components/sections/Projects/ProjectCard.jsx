@@ -1,65 +1,78 @@
 import React from 'react';
-import Button from '../../ui/Button/Button';
 import './ProjectCard.css';
 
 /**
  * ProjectCard Component
- * 
- * Reusable card component for displaying individual project information.
- * Shows title, description, tech stack, features, and optional GitHub link.
- * 
- * @param {Object} props - Component props
- * @param {string} props.title - Project title
- * @param {string} props.description - Project description
- * @param {string[]} props.tech - Array of technologies used
- * @param {string[]} props.features - Array of project features
- * @param {string|null} props.github - GitHub repository URL (optional)
- * @returns {JSX.Element} Project card with all project details
+ *
+ * Renders a project as a spec panel: title + status, a short
+ * description, tech stack as monospace labels (grouped by
+ * Backend/Frontend for the featured project), an optional hard-number
+ * metrics row, and repo links.
+ *
+ * @param {Object} props
+ * @param {Object} props.project
  */
-function ProjectCard({ title, description, tech, features, github }) {
+function ProjectCard({ project }) {
+  const { title, subtitle, status, statusLabel, description, stacks, tech, metrics, links, featured } = project;
+
+  const cardClasses = ['project-card', featured && 'project-card--featured'].filter(Boolean).join(' ');
+
   return (
-    <article className="project-card">
-      <div className="project-card__content">
-        <h3 className="project-card__title">{title}</h3>
-        <p className="project-card__description">{description}</p>
-        
-        <div className="project-card__tech">
-          <h4 className="project-card__tech-title">Technologies</h4>
-          <ul className="project-card__tech-list">
-            {tech.map((technology, index) => (
-              <li key={index} className="project-card__tech-item">
-                {technology}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <article className={cardClasses}>
+      <header className="project-card__header">
+        <h3 className="project-card__title font-display">
+          {title}
+          {subtitle && <span className="project-card__subtitle">— {subtitle}</span>}
+        </h3>
+        {statusLabel && (
+          <span className={`project-card__status project-card__status--${status}`}>
+            <span className="project-card__status-dot" aria-hidden="true" />
+            {statusLabel}
+          </span>
+        )}
+      </header>
 
-        <div className="project-card__features">
-          <h4 className="project-card__features-title">Key Features</h4>
-          <ul className="project-card__features-list">
-            {features.map((feature, index) => (
-              <li key={index} className="project-card__features-item">
-                {feature}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <p className="project-card__description">{description}</p>
 
-        {github && (
-          <div className="project-card__actions">
-            <Button
-              variant="outline"
-              size="medium"
-              href={github}
+      {stacks ? (
+        <dl className="project-card__stacks">
+          {stacks.map((stack) => (
+            <div className="project-card__stack-row" key={stack.label}>
+              <dt className="project-card__stack-label mono">{stack.label}</dt>
+              <dd className="project-card__stack-items mono">{stack.items.join(' · ')}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : (
+        <p className="project-card__tech mono">{tech.join(' · ')}</p>
+      )}
+
+      {metrics && metrics.length > 0 && (
+        <dl className="project-card__metrics">
+          {metrics.map((metric) => (
+            <div className="project-card__metric" key={metric.label}>
+              <dt className="project-card__metric-value mono tabular-nums">{metric.value}</dt>
+              <dd className="project-card__metric-label">{metric.label}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
+      {links && links.length > 0 && (
+        <div className="project-card__links">
+          {links.map((link) => (
+            <a
+              key={link.url}
+              href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card__button"
+              className="project-card__link"
             >
-              View on GitHub
-            </Button>
-          </div>
-        )}
-      </div>
+              <span aria-hidden="true">→</span> {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </article>
   );
 }

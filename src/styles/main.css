@@ -17,8 +17,8 @@ html {
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-ink);
+  color: var(--color-paper);
   overflow-x: hidden;
 }
 
@@ -32,49 +32,51 @@ body {
 /* Skip Link for Accessibility */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -100px;
   left: 0;
-  background: var(--color-accent);
-  color: var(--color-text);
+  background: var(--color-brass);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
   padding: var(--spacing-sm) var(--spacing-md);
   text-decoration: none;
-  z-index: 100;
+  z-index: 200;
   border-radius: 0 0 var(--radius-md) 0;
 }
 
 .skip-link:focus {
-  top: 0;
+  top: var(--spacing-sm);
 }
 
 /* Focus Visible Styles */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-brass);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
 /* Selection Styles */
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-text);
+  background-color: var(--color-brass);
+  color: var(--color-ink);
 }
 
 ::-moz-selection {
-  background-color: var(--color-accent);
-  color: var(--color-text);
+  background-color: var(--color-brass);
+  color: var(--color-ink);
 }
 
 /* Scrollbar Styles (Webkit browsers) */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface);
+  background: var(--color-ink);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: var(--color-border-strong);
   border-radius: var(--radius-full);
 }
 

@@ -1,127 +1,84 @@
 /**
  * Typography System
- * 
- * Base typography styles and font stack configuration.
- * Ensures consistent text rendering across all devices and browsers.
+ *
+ * Display face (Bricolage Grotesque) is reserved for name, section
+ * labels, and project titles only. Everything else is body (IBM Plex
+ * Sans) or mono (IBM Plex Mono) for tech labels and metrics.
  */
 
-/* Base Font Stack */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: var(--font-size-base);
+  font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-paper);
+  font-feature-settings: 'tnum' 1;
 }
 
-/* Monospace Font Stack (for code) */
 code,
-pre {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas,
-    'Courier New', monospace;
+pre,
+.mono {
+  font-family: var(--font-mono);
 }
 
-/* Heading Scale */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
-  color: var(--color-text);
-  margin-bottom: var(--spacing-md);
+  color: var(--color-paper);
 }
 
-h1 {
-  font-size: var(--font-size-5xl);
+.font-display {
+  font-family: var(--font-display);
   font-weight: var(--font-weight-bold);
+  letter-spacing: -0.01em;
 }
 
-h2 {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-}
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-lg); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-md); }
+h6 { font-size: var(--text-base); }
 
-h3 {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-semibold);
-}
-
-h4 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-}
-
-h5 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-}
-
-h6 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
-}
-
-/* Body Text */
 p {
-  margin-bottom: var(--spacing-md);
   line-height: var(--line-height-relaxed);
 }
 
-/* Links */
 a {
-  color: var(--color-accent);
+  color: var(--color-signal);
   text-decoration: none;
   transition: color var(--transition-base);
 }
 
 a:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-brass);
 }
 
-a:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-/* Lists */
 ul,
 ol {
-  margin-bottom: var(--spacing-md);
   padding-left: var(--spacing-lg);
 }
 
 li {
-  margin-bottom: var(--spacing-xs);
   line-height: var(--line-height-relaxed);
 }
 
-/* Responsive Typography */
+/* Tabular figures for anything reporting a metric */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
 @media (max-width: 768px) {
-  h1 {
-    font-size: var(--font-size-4xl);
-  }
-
-  h2 {
-    font-size: var(--font-size-3xl);
-  }
-
-  h3 {
-    font-size: var(--font-size-2xl);
-  }
-
-  h4 {
-    font-size: var(--font-size-xl);
-  }
-
-  body {
-    font-size: var(--font-size-base);
-  }
+  h1 { font-size: clamp(2rem, 8vw, 2.75rem); }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
 }

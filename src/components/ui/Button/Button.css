@@ -1,122 +1,94 @@
 /* Base button styles */
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   text-align: center;
   text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 4px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color 0.2s ease,
-              border-color 0.2s ease,
-              color 0.2s ease,
-              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s ease;
   min-width: 44px;
   min-height: 44px;
-  line-height: 1.5;
-}
-
-/* Remove default button styles */
-.btn {
+  line-height: 1.2;
   background: none;
-  font-family: inherit;
 }
 
-/* Focus states for accessibility */
-.btn:focus {
-  outline: 2px solid currentColor;
+@media (prefers-reduced-motion: no-preference) {
+  .btn {
+    transition: background-color var(--transition-fast), border-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-brass);
   outline-offset: 2px;
-}
-
-.btn:focus:not(:focus-visible) {
-  outline: none;
 }
 
 /* Primary variant */
 .btn--primary {
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  border-color: var(--color-accent);
+  background-color: var(--color-brass);
+  color: var(--color-ink);
+  border-color: var(--color-brass);
 }
 
 .btn--primary:hover:not(.btn--disabled) {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
-}
-
-.btn--primary:active:not(.btn--disabled) {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  transform: translateY(0);
-  box-shadow: none;
+  background-color: color-mix(in srgb, var(--color-brass) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--color-brass) 85%, white 15%);
 }
 
 /* Secondary variant */
 .btn--secondary {
-  background-color: var(--color-surface-alt);
-  color: var(--color-text);
-  border-color: var(--color-border);
+  background-color: var(--color-slate-raised);
+  color: var(--color-paper);
+  border-color: var(--color-border-strong);
 }
 
 .btn--secondary:hover:not(.btn--disabled) {
-  background-color: var(--color-surface);
-  border-color: var(--color-accent);
-}
-
-.btn--secondary:active:not(.btn--disabled) {
-  background-color: var(--color-surface);
-  border-color: var(--color-accent);
+  border-color: var(--color-signal);
+  color: var(--color-signal);
 }
 
 /* Outline variant */
 .btn--outline {
   background-color: transparent;
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+  color: var(--color-paper);
+  border-color: var(--color-border-strong);
 }
 
 .btn--outline:hover:not(.btn--disabled) {
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
-}
-
-.btn--outline:active:not(.btn--disabled) {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  color: var(--color-text);
-  transform: translateY(0);
-  box-shadow: none;
+  border-color: var(--color-signal);
+  color: var(--color-signal);
 }
 
 /* Size variants */
 .btn--small {
   padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   min-height: 36px;
 }
 
 .btn--medium {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: var(--text-sm);
 }
 
 .btn--large {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  min-height: 52px;
+  padding: 0.9375rem 1.75rem;
+  font-size: var(--text-sm);
+  min-height: 50px;
 }
 
 /* Disabled state */
 .btn--disabled,
 .btn:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }

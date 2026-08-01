@@ -1,34 +1,23 @@
-.about {
-  background-color: var(--color-surface);
-}
-
 .about__content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: var(--measure);
 }
 
 .about__text {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--spacing-lg);
 }
 
 .about__paragraph {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  font-size: var(--text-md);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-muted);
   margin: 0;
   text-align: left;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .about__paragraph {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .about__text {
-    gap: 1.25rem;
+    font-size: var(--text-base);
   }
 }

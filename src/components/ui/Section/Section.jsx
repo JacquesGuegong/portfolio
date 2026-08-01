@@ -5,30 +5,34 @@ import './Section.css';
 
 /**
  * Section Component
- * 
- * Reusable section wrapper component that provides semantic HTML structure
- * and consistent spacing. Automatically wraps content in a Container component
- * and optionally renders a section title.
- * 
- * @param {Object} props - Component props
- * @param {React.ReactNode} props.children - Content to be rendered within the section
- * @param {string} [props.id] - Unique identifier for the section (for anchor links)
- * @param {string} [props.className] - Additional CSS classes to apply
- * @param {string} [props.title] - Optional section title to display as h2 heading
- * @returns {JSX.Element} Semantic section element with container and optional title
+ *
+ * Reusable section wrapper. When given an `index` and `title`, renders
+ * a left-aligned, numbered header (e.g. "02 — Projects") matching the
+ * pipeline rail's numbering, instead of a centered heading.
+ *
+ * @param {Object} props
+ * @param {React.ReactNode} props.children
+ * @param {string} [props.id]
+ * @param {string} [props.className]
+ * @param {string} [props.title] - Section heading
+ * @param {string} [props.index] - Two-digit index shown before the title (e.g. "02")
+ * @returns {JSX.Element}
  */
-function Section({ children, id, className = '', title }) {
+function Section({ children, id, className = '', title, index }) {
   const sectionClasses = `section ${className}`.trim();
-  const titleRef = useScrollReveal();
-  const contentRef = useScrollReveal({ rootMargin: '0px 0px -20px 0px' });
+  const headerRef = useScrollReveal();
+  const contentRef = useScrollReveal();
 
   return (
     <section id={id} className={sectionClasses}>
       <Container>
         {title && (
-          <h2 ref={titleRef} className="section__title reveal">{title}</h2>
+          <div ref={headerRef} className="section__header reveal">
+            {index && <span className="section__index mono">{index}</span>}
+            <h2 className="section__title font-display">{title}</h2>
+          </div>
         )}
-        <div ref={contentRef} className="section__content reveal reveal--delay-1">
+        <div ref={contentRef} className="section__content reveal">
           {children}
         </div>
       </Container>

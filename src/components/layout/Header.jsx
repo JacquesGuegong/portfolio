@@ -1,22 +1,23 @@
 import React from 'react';
 import Navigation from './Navigation';
+import useHideOnScroll from '../../hooks/useHideOnScroll';
+import { personalInfo } from '../../data/personal';
 import './Header.css';
 
 /**
  * Header Component
- * 
- * Site header containing the site name/logo and main navigation.
- * Uses semantic HTML5 <header> element for accessibility.
- * 
- * @returns {JSX.Element} The site header with navigation
+ *
+ * Sticky nav that hides on scroll down, reappears on scroll up.
  */
 function Header() {
+  const visible = useHideOnScroll();
+
   return (
-    <header className="header" role="banner">
+    <header className={`header${visible ? '' : ' header--hidden'}`} role="banner">
       <div className="header__container">
         <div className="header__brand">
-          <a href="#hero" className="header__logo" aria-label="Go to homepage">
-            Portfolio
+          <a href="#hero" className="header__logo font-display" aria-label="Jacques Duval Guegong — back to top">
+            {personalInfo.firstName} {personalInfo.lastName}
           </a>
         </div>
         <Navigation />

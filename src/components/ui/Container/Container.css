@@ -1,6 +1,12 @@
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-content);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 var(--spacing-lg);
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
 }

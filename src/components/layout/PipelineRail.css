@@ -1,0 +1,101 @@
+.pipeline-rail {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .pipeline-rail {
+    display: block;
+    position: fixed;
+    left: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 90;
+  }
+
+  .pipeline-rail__list {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* Connecting line threaded behind the nodes */
+  .pipeline-rail__list::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 5px;
+    width: 1px;
+    background: var(--color-border-strong);
+  }
+
+  .pipeline-rail__item {
+    position: relative;
+  }
+
+  .pipeline-rail__node {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .pipeline-rail__dot {
+    position: relative;
+    z-index: 1;
+    width: 11px;
+    height: 11px;
+    border-radius: var(--radius-full);
+    background: var(--color-ink);
+    border: 1.5px solid var(--color-border-strong);
+  }
+
+  .pipeline-rail__tag {
+    font-size: var(--text-2xs);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+
+  .pipeline-rail__node:hover .pipeline-rail__tag,
+  .pipeline-rail__node:focus-visible .pipeline-rail__tag {
+    color: var(--color-paper);
+  }
+
+  .pipeline-rail__node.is-active .pipeline-rail__dot {
+    background: var(--color-brass);
+    border-color: var(--color-brass);
+    box-shadow: 0 0 0 3px var(--color-brass-dim);
+  }
+
+  .pipeline-rail__node.is-active .pipeline-rail__tag {
+    color: var(--color-brass);
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pipeline-rail__dot {
+      transition: background-color var(--transition-reveal), border-color var(--transition-reveal),
+        box-shadow var(--transition-reveal);
+    }
+
+    .pipeline-rail__tag {
+      transition: opacity var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pipeline-rail__tag {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

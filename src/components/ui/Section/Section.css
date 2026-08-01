@@ -1,12 +1,37 @@
 .section {
-  padding: 4rem 0;
+  padding: var(--spacing-4xl) 0;
+}
+
+.section__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-md);
+  margin: 0 0 var(--spacing-2xl) 0;
+  text-align: left;
+}
+
+.section__index {
+  font-size: var(--text-sm);
+  color: var(--color-brass);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.04em;
 }
 
 .section__title {
-  margin: 0 0 2rem 0;
-  text-align: center;
+  margin: 0;
+  font-size: var(--text-2xl);
 }
 
 .section__content {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .section__header {
+    margin-bottom: var(--spacing-xl);
+  }
 }

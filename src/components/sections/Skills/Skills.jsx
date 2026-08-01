@@ -6,25 +6,16 @@ import './Skills.css';
 
 /**
  * Skills Component
- * 
- * Skills section displaying technical skills organized by category.
- * Maps over skills data and renders each category using SkillCategory component.
- * 
- * @returns {JSX.Element} Skills section with grid of skill categories
+ *
+ * A spec sheet, not a badge wall: each domain gets a row with a mono
+ * label and its items listed cleanly beside it.
  */
 function Skills() {
-  // Convert skills object to array of [category, skillsArray] pairs
-  const skillCategories = Object.entries(skills);
-
   return (
-    <Section id="skills" className="skills" title="Skills">
-      <div className="skills__grid">
-        {skillCategories.map(([category, skillsList]) => (
-          <SkillCategory
-            key={category}
-            category={category}
-            skills={skillsList}
-          />
+    <Section id="skills" className="skills" title="Skills" index="03">
+      <div className="skills__sheet">
+        {skills.map((group) => (
+          <SkillCategory key={group.domain} domain={group.domain} items={group.items} />
         ))}
       </div>
     </Section>

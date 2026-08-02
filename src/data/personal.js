@@ -31,7 +31,7 @@ export const personalInfo = {
     ctaSecondary: { text: 'Email', href: 'mailto:jamesduval1991@gmail.com' },
     metrics: [
       { value: '04', label: 'Projects shipped' },
-      { value: '06', label: 'Technical domains' },
+      { value: '07', label: 'Technical domains' },
       { value: '100%', label: 'CI/CD pipelines green' },
     ],
   },

@@ -7,15 +7,15 @@
 export const experience = [
   {
     id: 'penzeys-spices',
-    role: 'Linux Administrator',
+    role: 'IT Support Technician',
     company: 'Penzeys Spices',
     start: '2021',
     end: '2024',
     highlights: [
-      'Administered Ubuntu Linux systems',
-      'Managed user accounts and permissions',
-      'Monitored system performance',
-      'Configured router/switch network infrastructure, including VLANs and subnetting',
+      'Configured and maintained network infrastructure — routers, switches, and WiFi access points — supporting daily operations.',
+      'Troubleshot connectivity issues and hardware failures, reducing employee downtime through systematic diagnosis and resolution.',
+      'Used Linux command-line tools for system administration: file management, process monitoring, and network diagnostics.',
+      'Built structured onboarding documentation that reduced training time from 2 weeks to 5 days and reduced mis-picks by 15%.',
     ],
   },
 ];

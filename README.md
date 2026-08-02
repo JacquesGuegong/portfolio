@@ -211,7 +211,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - **Title**: Computer Science Graduate | Incoming AI/ML Master's Student
 - **Email**: Jamesduval1991@gmail.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/jacquesduvalguegong)
 - **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
 
 ## Acknowledgments

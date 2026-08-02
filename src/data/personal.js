@@ -14,7 +14,7 @@ export const personalInfo = {
   initials: 'JDG',
 
   email: 'jamesduval1991@gmail.com',
-  linkedin: 'https://linkedin.com/in/jacquesduvalguegong',
+  linkedin: 'https://www.linkedin.com/in/jacquesduvalguegong',
   github: 'https://github.com/JacquesGuegong',
 
   resume: {

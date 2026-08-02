@@ -14,7 +14,7 @@ function Contact() {
   const endpoints = [
     { label: 'Email', value: email, href: `mailto:${email}`, external: false },
     { label: 'GitHub', value: 'github.com/JacquesGuegong', href: github, external: true },
-    { label: 'LinkedIn', value: 'linkedin.com/in/jacquesduvalguegong', href: linkedin, external: true },
+    { label: 'LinkedIn', value: 'www.linkedin.com/in/jacquesduvalguegong', href: linkedin, external: true },
     { label: 'Resume', value: 'Download PDF', href: resume.url, external: true },
   ];
 

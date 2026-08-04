@@ -32,6 +32,7 @@ export const projects = [
     links: [
       { label: 'Backend repo', url: 'https://github.com/JacquesGuegong/personal-finance-app' },
       { label: 'Frontend repo', url: 'https://github.com/JacquesGuegong/personal-finance-mobile' },
+      { label: 'Watch demo', url: 'https://youtu.be/b7chZd7F0GY', icon: 'play' },
     ],
   },
   {

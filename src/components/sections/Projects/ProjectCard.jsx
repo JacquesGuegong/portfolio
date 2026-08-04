@@ -68,7 +68,16 @@ function ProjectCard({ project }) {
               rel="noopener noreferrer"
               className="project-card__link"
             >
-              <span aria-hidden="true">→</span> {link.label}
+              <span className="project-card__link-icon" aria-hidden="true">
+                {link.icon === 'play' ? (
+                  <svg viewBox="0 0 12 12" width="9" height="9" focusable="false">
+                    <path d="M3 2L10 6L3 10Z" fill="currentColor" />
+                  </svg>
+                ) : (
+                  '→'
+                )}
+              </span>
+              {link.label}
             </a>
           ))}
         </div>
